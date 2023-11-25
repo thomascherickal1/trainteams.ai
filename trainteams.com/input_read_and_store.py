@@ -1,4 +1,4 @@
-from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+from langchain.embeddings.sentence_tranformers import SentenceTransformerEmbeddings
 import regex as re
 from PyPDF2 import PdfReader
 from langchain.vectorstores import DeepLake
