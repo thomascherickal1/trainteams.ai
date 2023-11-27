@@ -1,9 +1,8 @@
-from langchain.embeddings.sentence_tranformers import SentenceTransformerEmbeddings
 import regex as re
 from PyPDF2 import PdfReader
 from langchain.vectorstores import DeepLake
 import spacy
-
+from langchain.embeddings import SentenceTransformerEmbeddings
 pdfFile = open('Rust Programming.pdf', 'rb')
 reader = PdfReader(pdfFile)
 
@@ -31,6 +30,6 @@ docs = tokens # the documents need to be a list of lists of words
 # Create and persist the vector store
 db = DeepLake.from_texts(docs, embedding_function, dataset_path="./deeplake_db")
 
-# db = DeepLake(persist_directory="./deeplake_db", embedding_function=embedding_function) to load into memory
+
 
 
